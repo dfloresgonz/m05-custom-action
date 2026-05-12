@@ -1,0 +1,7 @@
+- name: Ejecutar notify-and-tag
+  uses: ./.github/actions/notify-and-tag    # ← path local al action.yml
+  with:
+    version: ${{ github.event.inputs.version }}
+    environment: production
+    webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
+    create_tag: true
